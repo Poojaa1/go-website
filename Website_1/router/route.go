@@ -33,6 +33,7 @@ func HttpEndpoint() {
 	http.HandleFunc("/login", service.Login)
 	http.HandleFunc("/logout", service.Logout)
 	http.HandleFunc("/tutorial", tutorial)
+	http.HandleFunc("/healthz", healthz)
 	http.ListenAndServe(":6070", nil)
 }
 
@@ -69,3 +70,10 @@ func tutorial(w http.ResponseWriter, r *http.Request) {
 	err := util.Tpl.ExecuteTemplate(w, "tutorial.gohtml", nil)
 	fmt.Println(err)
 }
+
+func healthz(w http.ResponseWriter, r *http.Request) {
+	w.Header().Set("Content-Type", "application/json")
+	w.WriteHeader(http.StatusOK)
+	w.Write([]byte(`{"message": "application is working"}`))
+}
+

@@ -5,6 +5,7 @@ import (
 	"Website_1/router"
 	"Website_1/service"
 	"encoding/gob"
+	"fmt"
 
 	//"bufio"
 	"Website_1/util"
@@ -16,6 +17,7 @@ import (
 
 func main() {
 
+	fmt.Println("Connecting to database, starting the application ... ")
 	util.Tpl = template.Must(template.ParseGlob("Templates/*"))
 	util.DB = database.StartDatabase()
 	defer util.DB.Close()
@@ -24,6 +26,7 @@ func main() {
 		panic(err.Error())
 	}
 
+	fmt.Println("Connected to database, now connecting rabbit mq")
 	util.MessageBroker = database.StartMessageBroker()
 	defer util.MessageBroker.Close()
 

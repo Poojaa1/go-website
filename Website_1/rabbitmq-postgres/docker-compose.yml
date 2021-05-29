@@ -1,0 +1,18 @@
+version: '3'
+services:
+  db:
+    image: postgres
+    environment:
+      POSTGRES_DB: dev
+      POSTGRES_USER: postgres-dev
+      POSTGRES_PASSWORD: postgres-dev
+    ports:
+      - 5430:5432
+  rabbitmq:
+    image: rabbitmq:3-management-alpine
+    ports:
+      - 5672:5672
+      - 15672:15672
+    volumes:
+      - ~/.docker-conf/rabbitmq/data/:/var/lib/rabbitmq/
+      - ~/.docker-conf/rabbitmq/log/:/var/log/rabbitmq

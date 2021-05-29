@@ -106,6 +106,7 @@ func Signupprocess(w http.ResponseWriter, r *http.Request) {
 	var userId string
 	err = util.DB.QueryRow("INSERT INTO users(username, password,email) VALUES($1,$2,$3) RETURNING ID", users.Username, users.Password, users.Email).Scan(&userId)
 	if err != nil {
+		fmt.Println(err)
 		http.Error(w, "Server error, unable to create your account.", 500)
 		return
 	}
