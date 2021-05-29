@@ -7,10 +7,10 @@ import (
 
 //learning ===== to get the value os.Getenv("host"), run 'export host=localhost'
 const (
-	host     = "hpe-2.c5p6cfuydxbj.us-east-1.rds.amazonaws.com"
+	host     = "appp.cltnxlwt5pk5.us-east-1.rds.amazonaws.com"
 	port     = 5432
 	user     = "postgres"
-	password = "xz61KLLlvCUJ5Ax2xLag"
+	password = "U7eIlSB8FsDzgG0oHYT2"
 	dbname   = "postgres"
 )
 
