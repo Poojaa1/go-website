@@ -6,7 +6,7 @@ import (
 )
 
 func StartMessageBroker() *amqp.Connection{
-	connStr := fmt.Sprintf("amqp://%s:%s@%s:5672", "pooja", "pooja","localhost")
+	connStr := fmt.Sprintf("amqp://%s:%s@%s:5672", "guest", "guest","localhost")
 	conn, err := amqp.Dial(connStr)
 	if err != nil {
 		panic(err)
