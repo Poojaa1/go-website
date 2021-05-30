@@ -13,6 +13,7 @@ const (
 	password = "U7eIlSB8FsDzgG0oHYT2"
 	dbname   = "postgres"
 )
+//newone
 
 func StartDatabase() *sql.DB {
 
