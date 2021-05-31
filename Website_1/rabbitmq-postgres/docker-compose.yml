@@ -3,9 +3,9 @@ services:
   db:
     image: postgres
     environment:
-      POSTGRES_DB: postgres
-      POSTGRES_USER: postgres
-      POSTGRES_PASSWORD: U7eIlSB8FsDzgG0oHYT2
+      POSTGRES_DB: dev
+      POSTGRES_USER: postgres-dev
+      POSTGRES_PASSWORD: postgres-dev
     ports:
       - 5430:5432
   rabbitmq:
